@@ -1,7 +1,5 @@
 package cn.afternode.commonutil.io;
 
-import com.sun.istack.internal.Nullable;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -43,7 +41,7 @@ public class HTTPUtil {
     }
 
     public static String post(String httpUrl,
-                                @Nullable String param,
+                                String param,
                                 int connectTimeout, int readTimeout)
     throws IOException {
         StringBuilder result = new StringBuilder();
@@ -102,12 +100,12 @@ public class HTTPUtil {
         return result.toString();
     }
 
-    public static String post(String url, @Nullable String parameter, int timeout)
+    public static String post(String url, String parameter, int timeout)
             throws IOException {
         return post(url, parameter, timeout, timeout);
     }
 
-    public static String post(String url, @Nullable String parameter) throws IOException {
+    public static String post(String url, String parameter) throws IOException {
         return post(url, parameter, 15000, 15000);
     }
 
